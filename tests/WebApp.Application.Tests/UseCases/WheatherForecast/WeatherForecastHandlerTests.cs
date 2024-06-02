@@ -1,12 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
 using Moq;
-using NUnit.Framework;
 using WebApp.Application.UseCases.WeatherForecast;
 using WebApp.Domain.Entities;
 using WebApp.Domain.Interfaces.Services;
-using Xunit;
 
-namespace WebApp.Application.Tests.UseCases.WeatherForecast
+namespace WebApp.Application.Tests.UseCases.WheatherForecast
 {
     public class WeatherForecastHandlerTests
     {
@@ -44,8 +42,7 @@ namespace WebApp.Application.Tests.UseCases.WeatherForecast
             var result = await _handler.Handle(new WeatherForecastCommand { Total = total }, CancellationToken.None);
 
             // Assert
-            Assert.Equals(_forecasts, result.Forecasts);
+            Assert.Equal(_forecasts, result.Forecasts);
         }
-
     }
 }
